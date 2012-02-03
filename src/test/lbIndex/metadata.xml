@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IndexerServiceMetaData>
+  <index name="commonIndex">
+    <note key="lgModel" value="2010" />
+    <note key="has 'Norm' fields" value="false" />
+    <note key="has 'Double Metaphone' fields" value="true" />
+    <note key="indexing started" value="" />
+    <note key="indexing finished" value="" />
+  </index>
+  <note key="Automobiles[:]1.0" value="commonIndex" />
+</IndexerServiceMetaData>
+
