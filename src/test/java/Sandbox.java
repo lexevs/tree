@@ -30,13 +30,18 @@ public class Sandbox {
 		// .createCodingSchemeVersionOrTagFromVersion("UNASSIGNED");
 		// LexEvsTree tree = service.getTree("chebi_ontology", csvt,
 		// "CHEBI:100246");
-		CodingSchemeVersionOrTag csvt1 = Constructors
-				.createCodingSchemeVersionOrTagFromVersion("March2011");
-		CodingSchemeVersionOrTag csvt = Constructors
-				.createCodingSchemeVersionOrTagFromVersion("January2012");
+		
+		
+		//CodingSchemeVersionOrTag csvt = Constructors
+		//		.createCodingSchemeVersionOrTagFromVersion("January2012");
 		// LexEvsTree tree = service.getTree("ChEBI", csvt, "CHEBI:100246");
-		LexEvsTree tree = service.getTree("ChEBI", csvt, "CHEBI:33582");
+		//LexEvsTree tree = service.getTree("ChEBI", csvt, "CHEBI:33582");
 
+		
+		CodingSchemeVersionOrTag csvt = Constructors
+				.createCodingSchemeVersionOrTagFromVersion("11.09d");
+		
+		LexEvsTree tree = service.getTree("NCI_Thesaurus", csvt, "C37927");
 		System.out.println(System.currentTimeMillis() - start);
 
 		System.out.println(tree.getCurrentFocus().getExpandableStatus());
@@ -136,6 +141,14 @@ public class Sandbox {
 		   }
 		}
 	}	
+
+	private static String buildPrefix(int depth) {
+		String prefix = "";
+		for (int i = 0; i < depth; i++) {
+			prefix = prefix + " -> ";
+		}
+		return prefix;
+	}
 	
 	private static void printTree(LexEvsTreeNode node, int depth) {
 		printNode(node, depth);
@@ -175,11 +188,5 @@ public class Sandbox {
 		}
 	}
 
-	private static String buildPrefix(int depth) {
-		String prefix = "";
-		for (int i = 0; i < depth; i++) {
-			prefix = prefix + " -> ";
-		}
-		return prefix;
-	}
+
 }

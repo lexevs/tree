@@ -30,6 +30,7 @@ import org.lexevs.tree.dao.iterator.ChildTreeNodeIterator;
  * 
  * @author <a href="mailto:kevin.peterson@mayo.edu">Kevin Peterson</a>
  */
+@LgClientSideSafe
 public class LexEvsTreeNode implements Serializable {
 
 	/** The Constant serialVersionUID. */
