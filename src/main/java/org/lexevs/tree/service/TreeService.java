@@ -20,6 +20,7 @@ package org.lexevs.tree.service;
 
 import org.LexGrid.LexBIG.DataModel.Core.CodingSchemeVersionOrTag;
 import org.LexGrid.LexBIG.Extensions.Generic.GenericExtension;
+import org.lexevs.tree.evstree.EvsTreeConverter;
 import org.lexevs.tree.json.JsonConverter;
 import org.lexevs.tree.model.LexEvsTree;
 import org.lexevs.tree.model.LexEvsTreeNode;
@@ -133,4 +134,11 @@ public interface TreeService extends GenericExtension {
 	 * @return the json converter
 	 */
 	public JsonConverter getJsonConverter();
+	
+	/**
+	 * Gets the evsTree converter.
+	 * 
+	 * @return the evsTree converter
+	 */
+	public EvsTreeConverter getEvsTreeConverter();
 }

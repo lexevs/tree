@@ -25,10 +25,7 @@ import org.LexGrid.LexBIG.DataModel.Core.AbsoluteCodingSchemeVersionReference;
 import org.LexGrid.LexBIG.DataModel.Core.CodingSchemeVersionOrTag;
 import org.LexGrid.LexBIG.DataModel.Core.ResolvedConceptReference;
 import org.LexGrid.LexBIG.DataModel.InterfaceElements.ExtensionDescription;
-import org.LexGrid.LexBIG.Exceptions.LBParameterException;
 import org.LexGrid.LexBIG.Impl.Extensions.AbstractExtendable;
-import org.LexGrid.LexBIG.Utility.Constructors;
-import org.LexGrid.LexBIG.Utility.ServiceUtility;
 import org.LexGrid.naming.SupportedHierarchy;
 import org.apache.commons.lang.StringUtils;
 import org.lexevs.dao.database.access.DaoManager;
@@ -41,6 +38,8 @@ import org.lexevs.tree.dao.LexEvsTreeDao.Direction;
 import org.lexevs.tree.dao.hierarchy.HierarchyResolver;
 import org.lexevs.tree.dao.iterator.ChildTreeNodeIteratorFactory;
 import org.lexevs.tree.dao.pathtoroot.PathToRootResolver;
+import org.lexevs.tree.evstree.ChildPagingEvsTreeConverter;
+import org.lexevs.tree.evstree.EvsTreeConverter;
 import org.lexevs.tree.json.ChildPagingJsonConverter;
 import org.lexevs.tree.json.JsonConverter;
 import org.lexevs.tree.model.LexEvsTree;
@@ -473,4 +472,10 @@ public class PathToRootTreeServiceImpl extends AbstractExtendable implements Tre
 	public JsonConverter getJsonConverter() {
 		return new ChildPagingJsonConverter();
 	}
+	
+	public EvsTreeConverter getEvsTreeConverter() {
+		return new ChildPagingEvsTreeConverter();
+	}
+		
+	
 }
