@@ -473,6 +473,9 @@ public class PathToRootTreeServiceImpl extends AbstractExtendable implements Tre
 		return new ChildPagingJsonConverter();
 	}
 	
+	/* (non-Javadoc)
+	 * @see org.lexevs.tree.service.TreeService#getEvsTreeConverter()
+	 */
 	public EvsTreeConverter getEvsTreeConverter() {
 		return new ChildPagingEvsTreeConverter();
 	}

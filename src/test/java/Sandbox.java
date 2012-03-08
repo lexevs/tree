@@ -25,7 +25,8 @@ public class Sandbox {
 		new PathToRootTreeServiceImpl().getSpringManagedBean();
 
 		long start = System.currentTimeMillis();
-		// LexEvsTree tree = service.getTree("MedDRA", null, "10040901");
+		 CodingSchemeVersionOrTag csvt= Constructors.createCodingSchemeVersionOrTagFromVersion("14.1");
+		 LexEvsTree tree = service.getTree("MedDRA", csvt, "10040901");
 		// CodingSchemeVersionOrTag csvt= Constructors
 		// .createCodingSchemeVersionOrTagFromVersion("UNASSIGNED");
 		// LexEvsTree tree = service.getTree("chebi_ontology", csvt,
@@ -38,10 +39,10 @@ public class Sandbox {
 		//LexEvsTree tree = service.getTree("ChEBI", csvt, "CHEBI:33582");
 
 		
-		CodingSchemeVersionOrTag csvt = Constructors
-				.createCodingSchemeVersionOrTagFromVersion("11.09d");
-		
-		LexEvsTree tree = service.getTree("NCI_Thesaurus", csvt, "C37927");
+//		CodingSchemeVersionOrTag csvt = Constructors
+//				.createCodingSchemeVersionOrTagFromVersion("11.09d");
+//		
+//		LexEvsTree tree = service.getTree("NCI_Thesaurus", csvt, "C37927");
 		System.out.println(System.currentTimeMillis() - start);
 
 		System.out.println(tree.getCurrentFocus().getExpandableStatus());
