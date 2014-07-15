@@ -25,6 +25,8 @@ import org.LexGrid.LexBIG.DataModel.Core.AbsoluteCodingSchemeVersionReference;
 import org.LexGrid.LexBIG.DataModel.Core.CodingSchemeVersionOrTag;
 import org.LexGrid.LexBIG.DataModel.Core.ResolvedConceptReference;
 import org.LexGrid.LexBIG.DataModel.InterfaceElements.ExtensionDescription;
+import org.LexGrid.LexBIG.Exceptions.LBParameterException;
+import org.LexGrid.LexBIG.Extensions.ExtensionRegistry;
 import org.LexGrid.LexBIG.Impl.Extensions.AbstractExtendable;
 import org.LexGrid.naming.SupportedHierarchy;
 import org.apache.commons.lang.StringUtils;
@@ -479,6 +481,12 @@ public class PathToRootTreeServiceImpl extends AbstractExtendable implements Tre
 	public EvsTreeConverter getEvsTreeConverter() {
 		return new ChildPagingEvsTreeConverter();
 	}
+
+	@Override
+	protected void doRegister(ExtensionRegistry registry,
+			ExtensionDescription description) throws LBParameterException {
+		// TODO Auto-generated method stub
 		
+	}
 	
 }

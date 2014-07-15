@@ -66,6 +66,8 @@
 			Parts</lgNaming:supportedNamespace>
 		<lgNaming:supportedNamespace localId="TestForSameCodeNamespace"
 			uri="urn:oid:11.11.0.99">TestForSameCodeNamespace</lgNaming:supportedNamespace>
+		<lgNaming:supportedNamespace localId="TestForDifferentNamespaceSameCode"
+			uri="urn:oid:11.11.0.99">TestForDifferentNamespaceSameCode</lgNaming:supportedNamespace>
 		<lgNaming:supportedProperty localId="definition">definition</lgNaming:supportedProperty>
 		<lgNaming:supportedProperty localId="textualPresentation"
 			propertyType="presentation">textualPresentation</lgNaming:supportedProperty>
@@ -295,7 +297,18 @@
 					Namespace - 2</lgCommon:value>
 			</lgCon:presentation>
 		</lgCon:entity>
-
+		
+		<lgCon:entity entityCode="DifferentNamespaceConcept"
+			isActive="true" entityCodeNamespace="TestForDifferentNamespaceSameCode">
+			<lgCommon:entityDescription>Concept for testing same code but
+				different Namespace - 2</lgCommon:entityDescription>
+			<lgCon:entityType>concept</lgCon:entityType>
+			<lgCon:presentation propertyName="textualPresentation"
+				propertyId="p1" isPreferred="true">
+				<lgCommon:value>Concept for testing same code but different
+					Namespace - 2</lgCommon:value>
+			</lgCon:presentation>
+		</lgCon:entity>
 
 		<lgCon:entity entityCode="T0001" entityCodeNamespace="Automobiles"
 			status="a65" isActive="true">

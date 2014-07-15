@@ -96,8 +96,13 @@ public class JdbcLexEvsTreeDao extends JdbcDaoSupport implements LexEvsTreeDao {
 			String namespace){
 		
 			setDataSource();
-		
-			String[] arguments = new String[]{code};
+			String[] arguments = null;
+			if(namespace != null){
+			 arguments= new String[]{code, namespace};
+			}
+			else{
+				arguments = new String[]{code};
+			}
 				try {
 					return (LexEvsTreeNode)this.getJdbcTemplate().queryForObject(
 							getNodeSqlBuilder.buildSql(

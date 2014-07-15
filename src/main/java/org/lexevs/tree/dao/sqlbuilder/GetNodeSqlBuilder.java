@@ -68,7 +68,12 @@ public class GetNodeSqlBuilder extends AbstractSqlBuilder {
 		    		this.getCodingSchemeUid(codingSchemeName, versionOrTag, namespace));
 
 			query.addCondition(codingScheme);
-		    
+			
+			if(namespace != null){
+			Condition namespaceCondition = BinaryCondition.equalTo(entityTable.findColumn("entityCodeNamespace"), BinaryCondition.QUESTION_MARK);
+		    query.addCondition(namespaceCondition);
+			}
+			
 		    String sql = query.toString();
 		    	
 		    logger.debug(sql);
