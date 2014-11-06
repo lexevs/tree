@@ -10,7 +10,7 @@ import org.lexevs.tree.model.LexEvsTreeNode;
 public class StaticPathToRootResolver implements PathToRootResolver{
 
 	public List<LexEvsTreeNode> getPathToRoot(String codingScheme,
-			CodingSchemeVersionOrTag versionOrTag, String code) {
+			CodingSchemeVersionOrTag versionOrTag, String code, String namespace) {
 		
 		if(!code.equals("Chevy")){
 			throw new RuntimeException("Resolver only works with 'Chevy'.");

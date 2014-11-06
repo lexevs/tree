@@ -199,7 +199,7 @@ public class PathToRootTreeServiceImpl extends AbstractExtendable implements Tre
 		
 		factory.addNodeAddedListener(tree);
 		
-		List<LexEvsTreeNode> pathToRoot = pathToRootResolver.getPathToRoot(codingScheme, versionOrTag, code);
+		List<LexEvsTreeNode> pathToRoot = pathToRootResolver.getPathToRoot(codingScheme, versionOrTag, code, namespace);
 		
 		LexEvsTreeNode focusNode = lexEvsTreeDao.getNode(codingScheme, versionOrTag, code, namespace);
 		

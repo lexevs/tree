@@ -42,5 +42,5 @@ public interface PathToRootResolver extends Serializable {
 	 */
 	public List<LexEvsTreeNode> getPathToRoot(String codingScheme,
 			CodingSchemeVersionOrTag versionOrTag, 
-			String code);
+			String code, String namespace);
 }

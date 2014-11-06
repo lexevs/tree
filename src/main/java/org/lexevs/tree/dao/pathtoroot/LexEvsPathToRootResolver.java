@@ -61,7 +61,7 @@ public class LexEvsPathToRootResolver implements PathToRootResolver {
 	 * @see org.lexevs.tree.dao.pathtoroot.PathToRootResolver#getPathToRoot(java.lang.String, org.LexGrid.LexBIG.DataModel.Core.CodingSchemeVersionOrTag, java.lang.String)
 	 */
 	public List<LexEvsTreeNode> getPathToRoot(String codingScheme,
-			CodingSchemeVersionOrTag versionOrTag, String code) {
+			CodingSchemeVersionOrTag versionOrTag, String code, String codeNamespace) {
 		try {
 			
 			//Path-To-Root processing seems to work best when passing in a CodingSchemeName.
@@ -73,7 +73,7 @@ public class LexEvsPathToRootResolver implements PathToRootResolver {
 			
 			return transformer.transform(
 					lexBIGServiceConvenienceMethods.getHierarchyPathToRoot(
-							codingSchemeName, versionOrTag, null, code, false, HierarchyPathResolveOption.ALL, null));
+							codingSchemeName, versionOrTag, null, code, codeNamespace, false, HierarchyPathResolveOption.ALL, null));
 		} catch (LBException e) {
 			throw new RuntimeException(e);
 		}
