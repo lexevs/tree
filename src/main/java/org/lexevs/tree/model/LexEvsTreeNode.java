@@ -75,6 +75,9 @@ IS_EXPANDABLE, /** The I s_ no t_ expandable. */
 	public LexEvsTreeNode(LexEvsTreeNode letn ) {
 		this.code= letn.code;
 		this.entityDescription= letn.entityDescription;
+		if(letn.namespace != null){
+		this.namespace = letn.namespace;
+		}
 		this.expandableStatus= letn.expandableStatus;
 		
 	}
