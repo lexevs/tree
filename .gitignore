@@ -8,3 +8,6 @@ S generated files #
 ehthumbs.db
 Thumbs.db
 /target/*
+/src/test/lbIndex/*
+/src/logs/*
+

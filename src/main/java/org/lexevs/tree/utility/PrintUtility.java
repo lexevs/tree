@@ -56,7 +56,7 @@ public class PrintUtility {
 	 * @param depth the depth
 	 */
 	private static void print(LexEvsTreeNode node, int depth){
-		System.out.println(buildPrefix(depth) + "Code: " + node.getCode() + ", " + "Description: " + node.getEntityDescription() + "Namespace: " + node.getNamespace() + " Hash: " + node.hashCode());
+		System.out.println(buildPrefix(depth) + "Code: " + node.getCode() + ", " + "Description: " + node.getEntityDescription() +  ", " + "Namespace: " + node.getNamespace() + " Hash: " + node.hashCode());
 		if(node.getPathToRootParents() != null && node.getPathToRootParents().size() > 0){
 			for(LexEvsTreeNode parent : node.getPathToRootParents()){
 				print(parent, depth + 1);
