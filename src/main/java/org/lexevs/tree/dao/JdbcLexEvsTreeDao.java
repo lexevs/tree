@@ -104,22 +104,28 @@ public class JdbcLexEvsTreeDao extends JdbcDaoSupport implements LexEvsTreeDao {
 				arguments = new String[]{code};
 			}
 				try {
-					return (LexEvsTreeNode)this.getJdbcTemplate().queryForObject(
-							getNodeSqlBuilder.buildSql(
-									codingScheme, 
-									versionOrTag, 
-									code, 
-									namespace), arguments, new RowMapper(){
+				   List<LexEvsTreeNode> nodes = this.getJdbcTemplate().query(
+                            getNodeSqlBuilder.buildSql(
+                                    codingScheme, 
+                                    versionOrTag, 
+                                    code, 
+                                    namespace), arguments, new RowMapper(){
 
-										public Object mapRow(ResultSet rs,
-												int rowNum) throws SQLException {
-											LexEvsTreeNode node = new LexEvsTreeNode();
-											node.setCode(rs.getString("entityCode"));
-											node.setEntityDescription(rs.getString("description"));
-											node.setNamespace(rs.getString("entityCodeNamespace"));
-											return node;
-										}
-					});
+                                        public Object mapRow(ResultSet rs,
+                                                int rowNum) throws SQLException {
+                                            LexEvsTreeNode node = new LexEvsTreeNode();
+                                            node.setCode(rs.getString("entityCode"));
+                                            node.setEntityDescription(rs.getString("description"));
+                                            node.setNamespace(rs.getString("entityCodeNamespace"));
+                                            return node;
+                                        }
+                    });
+				   for(LexEvsTreeNode node: nodes){
+				       if(node != null && node.getNamespace().equals(namespace)){
+				           return node;
+				       }
+				   }
+				return null;
 				} catch (EmptyResultDataAccessException e) {
 					try {
 						if(! ServiceUtility.isSupplement(codingScheme, versionOrTag)) {

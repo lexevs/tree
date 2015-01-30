@@ -31,6 +31,7 @@ public class LexEvsTreeTestBase {
 		getChildrenSqlBuilder.setExcludeAnonymous(false);
 	}
 	
+	//Users may need to provide an absolute path definition in some OS environments
 	@BeforeClass
 	public static void setSystemProp() throws Exception {
 		System.setProperty("LG_CONFIG_FILE", "src/test/resources/lbconfig.props");	
